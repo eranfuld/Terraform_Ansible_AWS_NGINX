@@ -1,0 +1,9 @@
+---
+- name: This playbook calls the terraform script which is located on the AWS MGMT EC2 instance.
+  hosts: all
+  become: yes
+  tasks:
+  - name: Change the working directory to somedir/ before executing the command.
+    shell: /usr/local/bin/terraform apply -auto-approve
+    args:
+      chdir: /home/ec2-user/Terraform
