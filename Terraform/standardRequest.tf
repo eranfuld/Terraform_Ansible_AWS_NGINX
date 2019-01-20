@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_key_pair" "my-key" {
   key_name   = "my-key"
-  public_key = "${file("~/.ssh/id_rsa.pub")}"
+  public_key = "${file("/home/ec2-user/.ssh/id_rsa.pub")}"
 }
 
 resource "aws_security_group" "allow_ssh" {
